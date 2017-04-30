@@ -52,7 +52,4 @@ $s = option::pget('seth_geetest');
     </div>
     <br />
     <button type="submit" class="btn btn-primary">保存</button>
-    <?php
-    var_dump($s);
-    ?>
 </form>
