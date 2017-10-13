@@ -8,11 +8,16 @@
  */
 ?>
 <!--该网站正在使用 seth_geetest 插件-->
-<script type="text/javascript" src="//static.geetest.com/static/tools/gt.js"></script>
+<script type="text/javascript" src="/plugins/seth_geetest/gt.js"></script>
 <script type="text/javascript">
     $(function () {
+        $('.login-button button').attr('disabled', true);
         var handlerEmbed = function (captchaObj) {
             captchaObj.appendTo("#captcha");
+
+            captchaObj.onSuccess(function () {
+                $('.login-button button').attr('disabled', false);
+            });
         };
         $.ajax({
             url: "/index.php?pub_plugin=seth_geetest&t=" + (new Date()).getTime(), // 加随机数防止缓存
